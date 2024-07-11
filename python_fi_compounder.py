@@ -10,8 +10,9 @@ while True:
 
             FVL = Pv * (1 - (r / 100)) ** n
 
-            print("Money lost:" + FVL)
-
+            print(FVL)
+            print("hang in there and dont lose hope, you got it boss")
+            
         elif user_loss_input == "no":
             print("Congratulations! We will need some information to calculate your compound interest.")
             cv = float(input("Please insert your initial investment: "))
@@ -21,7 +22,8 @@ while True:
 
             FV = cv * (1 + (i / (100 * cp))) ** (cp * ny)
 
-            print("Money gained: " + FV)
+            print(FV)
+            print("lets do better next year (^o^)")
 
         else:
             print("Invalid input, please type 'yes' or 'no'.")
