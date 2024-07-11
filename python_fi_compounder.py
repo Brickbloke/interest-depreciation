@@ -28,7 +28,12 @@ while True:
         
     else:
         continue
+
+    break 
+    print( "money lost: " + "$" + FVL )
     
+    print( "money gained "+ "$" + FV ) 
+                   
 
    
        
