@@ -1,39 +1,39 @@
 while True:
-  try:
-      user_loss_input = input("have you lost money this year? (type = yes or no)")
+    try:
+        user_loss_input = input("Have you lost money this year? (type yes or no): ").strip().lower()
 
-      if user_loss_input == "yes":
-          print(" we are sad to hear you lost money ")
-          Pv = input("numbers insert your intial investment")  # intitial cash investment
-          Pv = float(Pv)
-          r = input("insert the rate of depreciation")  # disinterst rate
-          r = float(r)
-          n = input("please insert the number of year you had invested for")  # years
-          n = float(n)
+        if user_loss_input == "yes":
+            print("We are sad to hear you lost money.")
+            Pv = float(input("Please insert your initial investment: "))
+            r = float(input("Please insert the rate of depreciation (in percentage): "))
+            n = float(input("Please insert the number of years you had invested for: "))
 
-          FVL = Pv * (1 - (r / 100) ** n
+            FVL = Pv * (1 - (r / 100)) ** n
 
-          print("money lost: " + "$" + FVL)
+            print("Money lost:" + FVL)
 
-      elif user_loss_input == "no":
-          print("congragulations we will need some information to calculate your compound interest")
-          cv=input("numbers insert your intial investment")  # initial cash investment
-          cv=float(cv)
-          i=input("insert the rate of appreciation")  # interst rate
-          i=float(i)
-          ny=input("please insert the number of year you had invested for")  # years
-          ny=float(ny)
-          cp=input("compounding periods for your investment")  # compounding times
-          cp=float(cp)
+        elif user_loss_input == "no":
+            print("Congratulations! We will need some information to calculate your compound interest.")
+            cv = float(input("Please insert your initial investment: "))
+            i = float(input("Please insert the rate of appreciation (in percentage): "))
+            ny = float(input("Please insert the number of years you had invested for: "))
+            cp = float(input("Please insert the number of compounding periods per year: "))
 
-          FV=cv * (1 + (i / (100 * cp)) ** (cp * ny)
+            FV = cv * (1 + (i / (100 * cp))) ** (cp * ny)
 
-          print("money gained " + "$" + FV)
+            print("Money gained: " + FV)
 
-     else:
-         continue
+        else:
+            print("Invalid input, please type 'yes' or 'no'.")
+            continue
 
-     break
+        break
+
+    except EOFError:
+        break
+    except ValueError:
+        print("Invalid input, please enter numeric values where required.")
+
 
      
     
